@@ -1,4 +1,4 @@
-# DIO P. DOBLE - Frontend Developer
+# DIO P. DOBLE - Web Developer
 
 Welcome to my personal portfolio! I am a passionate Frontend Developer with experience in React, React Native, WordPress, Drupal, Laravel, and modern web technologies. I build scalable, maintainable, and high-performance web applications.
 
