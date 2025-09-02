@@ -1,0 +1,133 @@
+ body {
+            font-family: Arial, sans-serif;
+            padding-top: 70px;
+            /* Prevent navbar overlap */
+        }
+
+        .hero {
+            background-color: #0d6efd;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .slick-slide {
+            padding: 1rem;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .project-item img {
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .slick-dots li button:before {
+            color: #000;
+        }
+
+        .project-slider .card {
+            min-height: 200px;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* ====== Slick Arrows ====== */
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            color: #0d6efd;
+            /* Bootstrap primary blue */
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Positioning */
+        .slick-prev {
+            left: -40px;
+        }
+
+        .slick-next {
+            right: -40px;
+        }
+
+        /* Hover effect */
+        .slick-prev:hover,
+        .slick-next:hover {
+            color: #0a58ca;
+            /* darker blue */
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* Hide default icons */
+        .slick-prev:before,
+        .slick-next:before {
+            content: "";
+        }
+
+        /* ====== Slick Dots (Pagination) ====== */
+        .slick-dots {
+            display: flex !important;
+            justify-content: center;
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .slick-dots li {
+            margin: 0 5px;
+        }
+
+        /* Dot button */
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: #dee2e6;
+            /* light gray */
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0;
+            /* hide default text */
+        }
+
+        /* Active dot */
+        .slick-dots li.slick-active button {
+            background: #0d6efd;
+            /* active blue */
+            transform: scale(1.2);
+        }
+
+        /* Hover effect */
+        .slick-dots li button:hover {
+            background: #0a58ca;
+        }
+
+        /* ====== Responsive tweaks ====== */
+        @media (max-width: 768px) {
+            .slick-prev {
+                left: -25px;
+                font-size: 1.5rem;
+            }
+
+            .slick-next {
+                right: -25px;
+                font-size: 1.5rem;
+            }
+        }

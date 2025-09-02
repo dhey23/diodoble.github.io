@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dio P. Doble | Portfolio</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-top: 70px;
+            /* Prevent navbar overlap */
+        }
+
+        .hero {
+            background-color: #0d6efd;
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .slick-slide {
+            padding: 1rem;
+        }
+
+        .navbar {
+            margin-bottom: 20px;
+        }
+
+        .project-item img {
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .slick-dots li button:before {
+            color: #000;
+        }
+
+        .project-slider .card {
+            min-height: 200px;
+        }
+
+        .hover-effect:hover {
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* ====== Slick Arrows ====== */
+        .slick-prev,
+        .slick-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: transparent;
+            border: none;
+            font-size: 2rem;
+            color: #0d6efd;
+            /* Bootstrap primary blue */
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Positioning */
+        .slick-prev {
+            left: -40px;
+        }
+
+        .slick-next {
+            right: -40px;
+        }
+
+        /* Hover effect */
+        .slick-prev:hover,
+        .slick-next:hover {
+            color: #0a58ca;
+            /* darker blue */
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* Hide default icons */
+        .slick-prev:before,
+        .slick-next:before {
+            content: "";
+        }
+
+        /* ====== Slick Dots (Pagination) ====== */
+        .slick-dots {
+            display: flex !important;
+            justify-content: center;
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .slick-dots li {
+            margin: 0 5px;
+        }
+
+        /* Dot button */
+        .slick-dots li button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: none;
+            background: #dee2e6;
+            /* light gray */
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0;
+            /* hide default text */
+        }
+
+        /* Active dot */
+        .slick-dots li.slick-active button {
+            background: #0d6efd;
+            /* active blue */
+            transform: scale(1.2);
+        }
+
+        /* Hover effect */
+        .slick-dots li button:hover {
+            background: #0a58ca;
+        }
+
+        /* ====== Responsive tweaks ====== */
+        @media (max-width: 768px) {
+            .slick-prev {
+                left: -25px;
+                font-size: 1.5rem;
+            }
+
+            .slick-next {
+                right: -25px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Hi. I'am Dio Doble</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Technical Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero text-center"
+        style="background-image: url('https://cdn.pixabay.com/photo/2020/05/26/10/45/banner-5222640_960_720.jpg'); background-size: cover; background-position: center; color: white; padding: 6rem 2rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <p class="h1 py-0">Web Developer Specialist
+                    </p>
+                    <p class="h4 pb-5 fst-italc">Front-end and Back-end Developer
+                    </p>
+                    <p><small>A passionate and curious software developer with nearly 8 years of experience in building
+                            APIs, CMS, and responsive web applications. I aim to establish a career that maximizes my
+                            potential while allowing for continuous personal and professional growth. I’m always eager
+                            to develop innovative solutions and explore emerging technologies.</small>
+                    </p>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+
+
+    <main class="container-fluid mt-4 px-0 mx-0">
+        <!-- Technical Skills Section -->
+        <section id="skills" class="mt-5 container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-title fw-bold h1">Skills</h2>
+                    <ul>
+                        <li><strong>Laravel Development</strong> – Extensive experience in building
+                            scalable web applications using Laravel.</li>
+                        <li><strong>Legacy System Migration</strong> – Successfully migrated recipes
+                            and articles from a Laravel 4.2 application to WordPress.</li>
+                        <li><strong>WordPress Development</strong> – Skilled in developing custom
+                            WordPress plugins to extend functionality.</li>
+                        <li><strong>Problem-Solving & Logical Thinking</strong> – Strong analytical
+                            skills with a structured approach to troubleshooting and
+                            debugging.</li>
+                        <li><strong>API Development & Integration</strong> – Expertise in designing,
+                            building, and consuming RESTful APIs.</li>
+                        <li><strong>Version Control & Collaboration</strong> – Proficient in Git, with
+                            experience using Bitbucket and GitHub for code management and collaboration.</li>
+                        <li><strong>Project Management Tools</strong> – Familiar with Jira and Trello
+                            for task tracking, sprint planning, and agile workflows.</li>
+                        <li><strong>Fast-Paced Work Adaptability</strong> – Ability to perform
+                            efficiently under high-pressure and deadline-driven
+                            environments.</li>
+                        <li><strong>Reusable Code & Laravel Packages</strong> – Experienced in
+                            developing modular, reusable Laravel components for
+                            scalable applications.</li>
+                        <li><strong>Database Management</strong> – Strong expertise in relational
+                            databases, including MySQL and MongoDB</li>
+                        <li><strong>Technical Training & Mentorship</strong> – Capable of guiding and mentoring junior
+                            developers,
+                            ensuring knowledge transfer
+                            and team growth</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title fw-bold h1">Technical Skills & Expertise</h2>
+                    <ul>
+                        <li><strong>Frontend Development:</strong> JavaScript, Vue.js, Inertia.js, jQuery, Ajax, HTML,
+                            CSS, Tailwind CSS</li>
+                        <li><strong>Backend Development:</strong> PHP, Laravel, CodeIgniter</li>
+                        <li><strong>Database Management:</strong> MySQL, MsSQL, MongoDB, XAMPP, Laragon, CPanel</li>
+                        <li><strong>API Development & Integration:</strong> RESTful APIs, Third-Party APIs</li>
+                        <li><strong>Cache & Performance Optimization:</strong> Redis</li>
+                        <li><strong>Cloud Services:</strong> AWS (EC2, RDS, S3, EBS, Route 53, Lambda)</li>
+                        <li><strong>CMS & E-Commerce:</strong> WordPress, WooCommerce, Shopify, Custom Plugin
+                            Development, Drupal, October CMS</li>
+                        <li><strong>Deployment & DevOps:</strong> Server Management, CI/CD (GitHub Actions), Application
+                            Deployment</li>
+                        <li><strong>Architecture:</strong> MVC (Model-View-Controller)</li>
+                        <li><strong>Design Patterns:</strong> Repository Pattern, Service Pattern, Action Pattern</li>
+                        <li><strong>Programming Paradigms:</strong> Object-Oriented Programming (OOP)</li>
+                        <li><strong>Testing Methodologies:</strong> Test-Driven Development (TDD) with PHPUnit</li>
+                        <li><strong>System Monitoring & Logging:</strong> Laravel Telescope, Graylog</li>
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="my-5 bg-dark container-fluid">
+            <div class="container py-5">
+                <h2 class="section-title mb-4 text-center text-white  fw-bold h1 ">Work Experience</h2>
+                <div class="row row-cols-1 row-cols-md-4 g-4">
+
+                    <!-- Movent -->
+                    <div class="col">
+                        <div class="card h-100 border shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Senior Frontend Developer</h5>
+                                <h6 class="card-subtitle text-muted">Movent (GroupM)</h6>
+                                <p class="text-muted small">Sept. 13, 2023 – May 14, 2025<br>Taguig City</p>
+                                <ul class="small mb-0">
+                                    <li>Design, develop, and maintain robust APIs for seamless integration with the FareHarbor booking system.</li>
+                                    <li>Optimize API endpoints for efficiency, security, and scalability to handle high traffic and transactions.</li>
+                                    <li>Implement authentication, rate limiting, and data validation to ensure secure and reliable API interactions.</li>
+                                    <li>Maintain comprehensive API and OpenAPI documentation to support frontend developers and integrations.</li>
+                                    <li>Conduct thorough code reviews, identify bottlenecks, and resolve performance and security issues.</li>
+                                    <li>Collaborate with front-end developers to ensure smooth API integration.</li>
+                                    <li>Provide regular updates to the project manager and CEO, ensuring alignment with business goals.</li>
+                                    <li>
+                                        <strong>Frontend Responsibilities:</strong>
+                                        <ul>
+                                            <li>Design and implement frontend architecture using React / React Native.</li>
+                                            <li>Build reusable and scalable components.</li>
+                                            <li>Translate business and technical requirements into functional code.</li>
+                                            <li>Maintain a clean and well-documented codebase aligned with team standards.</li>
+                                            <li>Collaborate with engineers, PMs, and designers across projects.</li>
+                                            <li>Participate in code reviews, sprint ceremonies, and planning sessions.</li>
+                                            <li>Take initiative to solve technical problems and propose better solutions.</li>
+                                            <li>Keep up to date with modern frontend trends and tools.</li>
+                                            <li>Support pre-sales with technical insights when required.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <h5 class="card-subtitle text-muted py-3">Project and Maintanance</h5>
+                                <p class="small mb-0">
+                                    <a href="https://www.emarneek.com/" class="text-decoration-none text-black">Emarneek</a> |
+                                    <a href="https://smart.com.ph" class="text-decoration-none text-black">SMART</a> |
+                                    <a href="https://pldthome.com.ph"
+                                        class="text-decoration-none text-black">PLDTHOME</a> |
+                                    <a href="https://pgt.ph" class="text-decoration-none text-black">PGT</a> |
+                                    <a href="https://www.meralco.com.ph/"
+                                        class="text-decoration-none text-black">Meralco</a> |
+                                    <a href="https://tntph.com/" class="text-decoration-none text-black">Talk & Text</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Summit Media -->
+                    <div class="col">
+                        <div class="card h-100 border shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title"> Senior Software Engineer</h5>
+                                <h6 class="card-subtitle text-muted">Summit Media Inc.</h6>
+                                <p class="text-muted small">March 6, 2021 – August 31, 2023<br>Mandaluyong City</p>
+                                <ul class="small mb-0">
+                                    <li>Maintenance and development of company and client websites.</li>
+                                    <li>Manage databases and provide client access support.</li>
+                                    <li>Troubleshoot CMS issues, website bugs, and create incident reports.</li>
+                                    <li>Develop websites using WordPress, Drupal, and other frameworks based on client needs.</li>
+                                    <li>Contribute to the architecture and design of client solutions with a focus on scalability, performance, security,
+                                        and maintainability.</li>
+                                    <li>Develop high-quality software using AWS, JavaScript/TypeScript (Node.js), and GraphQL/REST APIs.</li>
+                                    <li>Maintain detailed technical documentation, diagrams, and specifications.</li>
+                                    <li>Write unit and integration tests targeting at least 70% code coverage.</li>
+                                    <li>Perform manual testing when necessary and contribute to robust test plans.</li>
+                                    <li>Participate in code reviews to ensure code quality and consistency.</li>
+                                    <li>Solve complex technical issues and support debugging during the project lifecycle.</li>
+                                    <li>Contribute to and execute deployment plans, perform environment-specific debugging, and support rollbacks when
+                                        needed.</li>
+                                    <li>Occasionally provide technical support during pre-sales activities.</li>
+                                    <li>Translate technical concepts clearly for both technical and non-technical stakeholders.</li>
+                                    <li>Stay up to date with modern technologies and propose improvements to internal development practices.</li>
+                                    <li>Collaborate with team members and project managers to ensure timely and high-quality delivery.</li>
+
+                                </ul>
+                                <h5 class="card-subtitle text-muted py-3">Project and Maintanance</h5>
+                                <p class="small mb-0">
+                                    <a href="https://CandyMag.com" class="text-decoration-none text-black">CandyMag</a>
+                                    |
+                                    <a href="https://Cosmo.ph" class="text-decoration-none text-black">Cosmo</a>
+                                    |
+                                    <a href="https:/EsquireMag.ph"
+                                        class="text-decoration-none text-black">EsquireMag</a> |
+                                    <a href="https://FemaleNetwork.com"
+                                        class="text-decoration-none text-black">FemaleNetwork</a> |
+                                    <a href="https://PEP.ph" class="text-decoration-none text-black">PEP </a> |
+                                    <a href="https://Preview.ph" class="text-decoration-none text-black">Preview </a> |
+                                    <a href="https://RealLiving.com.ph"
+                                        class="text-decoration-none text-black">RealLiving </a>
+                                    |
+                                    <a href="https:// SmartParenting.com.ph"
+                                        class="text-decoration-none text-black">SmartParenting
+                                    </a> |
+                                    <a href="https://Spot.ph" class="text-decoration-none text-black">Spot </a> |
+                                    <a href="https://SPIN.ph" class="text-decoration-none text-black">SPIN </a> |
+                                    <a href="https://TopBikes.ph" class="text-decoration-none text-black">TopBikes </a>
+                                    |
+                                    <a href="https://TopGear.com.ph" class="text-decoration-none text-black">TopGear
+                                    </a> |
+                                    <a href="https://Yummy.ph" class="text-decoration-none text-black">Yummy </a>
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- iFormatLogic -->
+                    <div class="col">
+                        <div class="card h-100 border shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Junior Web Developer</h5>
+                                <h6 class="card-subtitle text-muted">iFormatLogic</h6>
+                                <p class="text-muted small">Dec. 25, 2019 – Jan. 5, 2021<br>Iba, Zambales</p>
+                                <ul class="small mb-0">
+                                    <li>Developed new websites for clients using Laravel, WordPress, and Drupal CMS.</li>
+                                    <li>Customized WordPress and Drupal themes, templates, and plugins/modules based on client requirements.</li>
+                                    <li>Built and integrated APIs to connect third-party services into client websites.</li>
+                                    <li>Managed Plesk Server hosting environment including configuration, security updates, and backups.</li>
+                                    <li>Designed mockups in Photoshop and converted them into responsive HTML/CSS/JS templates.</li>
+                                    <li>Ensured cross-browser compatibility and optimized sites for performance and SEO.</li>
+                                    <li>Provided ongoing maintenance, client support, and documentation.</li>
+                                </ul>
+                                <h5 class="card-subtitle text-muted py-3">Project and Maintanance</h5>
+                                <p class="small mb-0">
+                                    <a href="https://kianleeseng.com.sg/" class="text-decoration-none text-black">Kian Lee Seng</a>
+                                    |
+                                    <a href="https://redefine.ourliveserver.net/" class="text-decoration-none text-black">Redefine</a>
+                                    |
+                                    <a href="https://inceptevent.com/" class="text-decoration-none text-black">Inceptevent</a>
+                                    |
+                                    <a href="https://incept.com/" class="text-decoration-none text-black">Incept</a>
+                                    |
+                                    <a href="https://www.ken-jo.com/" class="text-decoration-none text-black">Ken-jo</a>
+                                    |
+                                    <a href="https://www.space.org.sg/" class="text-decoration-none text-black">Space</a>
+                                    |
+                                    <a href="https://www.space.org.sg/gstce" class="text-decoration-none text-black">Gstce</a>
+                                    |
+                                    <a href="https://joynlifestudio.com/" class="text-decoration-none text-black">Joynlifestudio</a>
+                                    |
+                                </p>
+                               
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HHIC-TECH INC -->
+                    <div class="col">
+                        <div class="card h-100 border shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title"> Junior Web Developer</h5>
+                                <h6 class="card-subtitle text-muted">HHIC-Tech Inc.</h6>
+                                <p class="text-muted small">April 3, 2014 – Dec. 21, 2018<br>Subic, Zambales</p>
+                                <ul class="small mb-0">
+                                    <li>Developed and maintained websites using WordPress and Drupal CMS with WooCommerce integrations.</li>
+                                    <li>Customized CMS modules, themes, and plugins to support company requirements.</li>
+                                    <li>Migrated product data from Excel spreadsheets into MySQL databases.</li>
+                                    <li>Designed mockups in Photoshop and translated them into responsive HTML/CSS layouts.</li>
+                                    <li>Ensured cross-browser compatibility and mobile responsiveness across devices.</li>
+                                    <li>Performed API integrations with internal systems and third-party services.</li>
+                                    <li>Conducted debugging, testing, and bug-fixing for internal web applications.</li>
+                                    <li>Provided IT support for website hosting, database management, and system access.</li>
+                                    <li>Assisted in network troubleshooting, hardware/software support, and IT incident reporting.</li>
+                                </ul>
+                                <h5 class="card-subtitle text-muted py-3">Project and Maintanance</h5>
+                                <p class="small mb-0">
+                                    <a href="https://agtmktg.com/" class="text-decoration-none text-black">AGT</a>
+                                    |
+                                    <a href="https://cis.ourliveserver.net/" class="text-decoration-none text-black">College of Integrative Studies</a>
+                                    |
+                                    <a href="https://www.smu.edu.sg/" class="text-decoration-none text-black">SMU</a>
+                                    |
+                                    <a href="https://daiana.asia/" class="text-decoration-none text-black">Daiana Asia</a>
+                                    |
+                                    <a href="https://elevatephysio.com.sg" class="text-decoration-none text-black">Elevate Physiotherapy</a>
+                                    |
+                                    <a href="https://easternfurnishing.com/" class="text-decoration-none text-black">Sprucing Up Spaces</a>
+                                    |
+                                    <a href="https://averasia.com/" class="text-decoration-none text-black">Averasia One-Stop Solution</a>
+                                    |
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Noua Subic Corp -->
+                    <!-- <div class="col">
+                        <div class="card h-100 border shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Junior Web Developer</h5>
+                                <h6 class="card-subtitle text-muted">Noua Subic Corp.</h6>
+                                <p class="text-muted small">July 2, 2013 – April 1, 2014<br>Subic Bay Freeport Zone</p>
+                                <ul class="small mb-0">
+                                    <li>Developed websites as per client requirements.</li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+
+        </section>
+
+        <section id="projects" class="my-5 py-5">
+            <div class="container">
+                <h2 class="section-title text-center mb-4 fw-bold">Previous Projects & Maintanance</h2>
+                <!-- Merged Project Slider -->
+                <div class="project-slider">
+                    
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://www.versea.com/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Versea</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="	https://www.versea.com/wp-content/uploads/2024/01/Versea-Health_logo_white.png"
+                                class="center-block img p-3 bg-black" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://www.uneekman.com/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">UneekMan</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://www.uneekman.com/assets/uneekman-logo-DLwiQfz5.png"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://ehr-dev.apkamd.com/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">ApkaMD</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://ehr-dev.apkamd.com/media/logos/apka-branding-2.png"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://www.emarneek.com/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Emarneek</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="	https://www.emarneek.com/assets/emarneek-logo-6HZ5RQ3Q.png"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://company.meralco.com.ph/meralco-online" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Meralco</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://company.meralco.com.ph/themes/custom/meralco/default/images/logo.png"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://kianleeseng.com.sg/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Kian Lee Seng</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://kianleeseng.com.sg/wp-content/uploads/2024/11/kls_logo_web2019-300x237.png"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://pgt.ph/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Philippine Golf
+                            Tour</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://pgt.ph/sites/pgt.ph/files/inline-images/pgt-logo-2x.png"
+                                class="center-block img p-3" alt="" width="200px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+
+                        <a href="https://cis.smu.edu.sg/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">College of Integrative Studies</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://cis.smu.edu.sg/themes/smubase_5g/assets/site-headers/logo-smu-t.svg?revised=20241122"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://redefine.ourliveserver.net/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Redefine</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://redefine.ourliveserver.net/wp-content/uploads/2023/12/WhatsApp_Image_2023-11-15_at_15.11-1-1.png"
+                                class="center-block img p-3" alt="" width="250px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://sci.ourliveserver.net/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Spring</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://sci.ourliveserver.net/wp-content/uploads/2024/05/Logo.png"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect">
+                        <a href="https://CandyMag.com" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">CandyMag</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://images.summitmedia-digital.com/candy/images/2022/03/10/MicrosoftTeams-image.png"
+                                class="center-block img p-3" alt="" width="150px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" width="150px">
+                        <a href="https://Cosmo.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Cosmopolitan</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://1000logos.net/wp-content/uploads/2023/01/Cosmopolitan-logo.png"
+                                class="center-block img p-3" alt="" width="200px">
+                        </div>
+                    </div>
+                    <!-- Media 3 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" width="150px">
+                        <a href="https://EsquireMag.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">EsquireMag</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://cdn.freebiesupply.com/logos/large/2x/esquire-logo-black-and-white.png"
+                                class="center-block img p-3" alt="" width="200px">
+                        </div>
+
+                    </div>
+                    <!-- Media 4 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://FemaleNetwork.com" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">FemaleNetwork</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://sci.ourliveserver.net/wp-content/uploads/2024/05/Logo.png"
+                                class="center-block img p-3" alt="FemaleNetwork Logo" width="200px">
+                        </div>
+                    </div>
+
+                    <!-- Media 5 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://PEP.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">PEP</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://images.summitmedia-digital.com/smg-sreg/brands/pep-logo.svg"
+                                class="center-block img p-3" alt="PEP Logo" width="200px">
+                        </div>
+                    </div>
+
+                    <!-- Media 6 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://Preview.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Preview</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://static.wikia.nocookie.net/logopedia/images/3/35/Preview2008.png/revision/latest?cb=20171125113125"
+                                class="center-block img p-3" alt="Preview Logo" width="200px">
+                        </div>
+                    </div>
+
+                    <!-- Media 7 -->
+                    <!-- <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://RealLiving.com.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">RealLiving</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://sci.ourliveserver.net/wp-content/uploads/2024/05/Logo.png"
+                                class="center-block img p-3" alt="RealLiving Logo" width="200px">
+                        </div>
+                    </div> -->
+
+                    <!-- Media 8 -->
+                    <!-- <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://reportr.world" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Reportr</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://sci.ourliveserver.net/wp-content/uploads/2024/05/Logo.png"
+                                class="center-block img p-3" alt="Reportr Logo" width="200px">
+                        </div>
+                    </div> -->
+
+                    <!-- Media 9 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://SmartParenting.com.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">SmartParenting</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://www.haakaa.co.nz/cdn/shop/articles/Smart_Parenting_Logo_500x.jpg?v=1687218641"
+                                class="center-block img p-3" alt="SmartParenting Logo" width="200px">
+                        </div>
+                    </div>
+
+                    <!-- Media 10 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://Spot.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Spot</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://images.summitmedia-digital.com/spotph/images/spotlogo.png"
+                                class="center-block img p-3" alt="Spot Logo" width="200px">
+                        </div>
+                    </div>
+
+                    <!-- Media 11 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://SPIN.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">SPIN</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://www.spin.ph/images/spin-logo-l.jpg" class="center-block img p-3"
+                                alt="SPIN Logo" width="200px">
+                        </div>
+                    </div>
+
+                    <!-- Media 12 -->
+                    <!-- <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://TopBikes.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">TopBikes</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://sci.ourliveserver.net/wp-content/uploads/2024/05/Logo.png"
+                                class="center-block img p-3" alt="TopBikes Logo" width="200px">
+                        </div>
+                    </div> -->
+
+                    <!-- Media 13 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://TopGear.com.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">TopGear</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEgqoIgoZ41mbSO6xBO8aUCVqYYitcxD1IaQ&s"
+                                class="center-block img p-3" alt="TopGear Logo" width="200px">
+                        </div>
+                    </div>
+
+                    <!-- Media 14 -->
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://Yummy.ph" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Yummy</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://www.manilacookiestory.com/cdn/shop/files/Untitled_design_24.png?v=1736307272&width=3840"
+                                class="center-block img p-3" alt="Yummy Logo" width="200px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://inceptevent.com/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Inceptevent</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://inceptevent.com/wp-content/uploads/2017/07/logo.png"
+                                class="center-block img p-3 bg-black" alt="Yummy Logo" width="200px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://smart.com.ph/corporate" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">Smart</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="https://smart.com.ph/smartrevamp/assets_HeaderRevamp/img/smart_logo_white.png"
+                                class="center-block img p-3 bg-black" alt="Yummy Logo" width="200px">
+                        </div>
+                    </div>
+                    <div class="card shadow border p-3 mx-3 text-center hover-effect" style="width:150px;">
+                        <a href="https://pldthome.com/" target="_blank"
+                            class="h5 text-decoration-none text-black text-center">PLDTHOME</a>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="	https://pldthome.com/images/default-source/navbar-update-072023/pldt-logo-size-optimized.png"
+                                class="center-block img p-3" alt="Yummy Logo" width="200px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="mt-5 py-5 bg-dark text-white">
+            <div class="container">
+                <div class="row">
+                    <!-- Left Column (Contact Details) -->
+                    <div class="col-md-6">
+                        <div class="h-100 d-flex flex-column justify-content-start">
+                            <!-- Contact Header -->
+                            <div class="d-flex align-items-center pb-4">
+                                <p class="fw-bold text-2xl font-bold h1">Let's Connect</p>
+                            </div>
+                            <!-- Contact Information -->
+                            <div>
+                                <div class="d-flex align-items-center">
+                                    <div style="width: 15px !important;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                            class="oe se axp">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <p class="mb-0 px-1"> Taugtog Botolan Zambales</p>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div style="width: 15px !important;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                            class="oe se axp">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <p class="mb-0 px-1"><a href="mailto:dheydoble@gmail.com">dheydoble@gmail.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Social Media Links -->
+                            <div class="d-flex gap-3 mt-4">
+                                <!-- Facebook -->
+                                <a href="https://www.facebook.com/dheydoble/" target="_blank" class="text-dark">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                        fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+                                        </path>
+                                    </svg>
+                                </a>
+
+                                <!-- Github -->
+                                <a href="https://github.com/dhey23/Profile" target="_blank" class="text-dark">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                        fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                                        </path>
+                                    </svg>
+                                </a>
+
+                                <!-- Gmail -->
+                                <a href="mailto:dheydoble@gmail.com" target="_blank" class="text-dark">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                        fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 0C3.58 0 0 3.58 0 8c0 4.42 3.58 8 8 8 4.42 0 8-3.58 8-8S12.42 0 8 0zm3.09 4.5l.91 1.09-2.91 3.5-1.18-.91L8 7.9 5.09 8.7l-1.18-.91L5.91 4.5h5.18zm-6.18 7.5l-1.09-.91 2.91-3.5 1.18.91L8 8.1l2.91-1.18 1.18.91-2.91 3.5-1.09-.91-2.91 3.5z">
+                                        </path>
+                                    </svg>
+                                </a>
+
+                                <!-- LinkedIn -->
+                                <a href="https://www.linkedin.com/in/dio-doble-4908a7199/" target="_blank"
+                                    class="text-dark">
+                                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                        fill="currentColor" viewBox="0 0 16 16">
+                                        <path
+                                            d="M0 1.146C0 .51.447 0 .994 0h14.012c.547 0 .994.51.994 1.146v13.708c0 .636-.447 1.146-.994 1.146H.994C.447 16 0 15.49 0 14.854V1.146zm4.336 12.243h2.542v-6.416H4.336v6.416zm1.271-7.451c.8 0 1.25-.544 1.25-1.225s-.45-1.225-1.25-1.225c-.8 0-1.25.544-1.25 1.225s.45 1.225 1.25 1.225zm10.853 7.451h-2.543v-3.09c0-.68-.244-1.146-.806-1.146-.524 0-.832.353-.832.912v3.324h-2.542v-6.416h2.542v.878c.407-.62 1.13-.927 1.968-.927 1.447 0 2.442.91 2.442 2.91v3.655z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (Contact Form) -->
+                    <div class="col-lg-6">
+                        <h1 class="fw-bold section-title mb-4 mt-0">Contact Me</h1>
+                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" required />
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required />
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary px-5">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- Footer -->
+    <footer class="text-center mt-4 p-4 bg-light">
+        &copy; 2025 Dio P. Doble. All rights reserved.
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Project slider init
+            // $('.project-slider').slick({
+            //     dots: true,
+            //     arrows: true,
+            //     slidesToShow: 3,
+            //     slidesToScroll: 1,
+            //     infinite: true,
+            //     autoplay: true,
+            //     autoplaySpeed: 4000,
+            //     responsive: [
+            //         { breakpoint: 992, settings: { slidesToShow: 2 } },
+            //         { breakpoint: 576, settings: { slidesToShow: 1 } }
+            //     ]
+            // });
+            $('.project-slider').slick({
+                dots: true,
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: '<button type="button" class="slick-prev custom-prev"><i class="bi bi-arrow-left-circle-fill"></i></button>',
+                nextArrow: '<button type="button" class="slick-next custom-next"><i class="bi bi-arrow-right-circle-fill"></i></button>',
+                responsive: [
+                    { breakpoint: 992, settings: { slidesToShow: 2 } },
+                    { breakpoint: 576, settings: { slidesToShow: 1 } }
+                ]
+            });
+
+        });
+    </script>
+</body>
+
+</html>
